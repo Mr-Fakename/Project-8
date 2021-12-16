@@ -5,23 +5,23 @@
 
 {% block content %}
 
-    <main role="main" class="container mb-5">
+    <main role="main" class="container">
         <div class="row">
             <div class="col-md-8">
                 <div class="content-section">
                     <form method="POST">
                         {% csrf_token %}
                         <fieldset class="form-group">
-                            <legend class="border-bottom mb-4">Rejoignez-nous !</legend>
+                            <legend class="border-bottom mb-4">Connectez-vous</legend>
                             {{ form|crispy }}
                         </fieldset>
                         <div class="form-group">
-                            <button class="btn btn-outline-info" type="submit">Créer un compte</button>
+                            <button class="btn btn-outline-info" type="submit">Se connecter</button>
                         </div>
                     </form>
-                    <div class="border-top pt-3">
+                    <div class="border-top mb-5 pt-3">
                         <small class="text-muted">
-                            Vous avez déjà un compte ? <a class="ml-2" href="{% url 'login' %}">Connectez-vous</a>
+                            Vous n'avez pas de compte ? <a class="ml-2" href="{% url 'register' %}">Créez un compte</a>
                         </small>
                     </div>
                 </div>

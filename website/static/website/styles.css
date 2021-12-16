@@ -422,10 +422,10 @@ legend + * {
   height: auto;
 }
 
-[type=search] {
+/*[type=search] {
   outline-offset: -2px;
   -webkit-appearance: textfield;
-}
+}*/
 
 /* rtl:raw:
 [type="tel"],
