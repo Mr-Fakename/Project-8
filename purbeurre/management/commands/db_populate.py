@@ -27,7 +27,7 @@ class OpenFoodFactsAPI:
                    "sort_by": "unique_scans_n",
                    "page_size": 1000,
                    "json": 'true',
-                   "fields": "brands,stores,nutriscore_grade,"
+                   "fields": "brands,stores,nutriscore_grade,generic_name_fr,"
                              "categories,product_name_fr,code,image_url,categories_lc"
                    }
 
@@ -46,7 +46,7 @@ class OpenFoodFactsAPI:
                          self.raw_data["products"]]
 
         tags = ['brands', 'categories', 'code', 'nutriscore_grade', 'product_name_fr', 'stores', 'image_url',
-                'categories_lc']
+                'categories_lc', 'generic_name_fr']
 
         for product in self.raw_data:
             try:
@@ -63,6 +63,7 @@ class OpenFoodFactsAPI:
 
         for product in self.cleaned_data:
             product["product_name_fr"] = product['product_name_fr'].title()
+            product['generic_name_fr'] = product['generic_name_fr'].title()
             product["nutriscore_grade"] = product["nutriscore_grade"].upper()
 
             product["brands"] = str(list(map(str.strip, product["brands"].title().split(','))))
@@ -99,6 +100,7 @@ def create_products(api_data):
         try:
             new_product = Product(
                 name=product['product_name_fr'],
+                generic_name=product['generic_name_fr'],
                 brands=product['brands'],
                 code=product['code'],
                 nutriscore=product['nutriscore_grade'],

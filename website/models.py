@@ -8,6 +8,7 @@ from django.urls import reverse
 
 class Product(models.Model):
     name = models.CharField("Nom du produit", max_length=128, default=None)
+    generic_name = models.CharField("Nom du produit", max_length=128, default=None)
     brands = models.CharField("Marque du produit", max_length=128, default=None)
     code = models.IntegerField(default=None)
     nutriscore = models.CharField("Nutriscore du produit", max_length=1, default=None)

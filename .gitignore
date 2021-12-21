@@ -9,3 +9,4 @@ purbeurre/__pycache__/urls.cpython-39.pyc
 *.iml
 *.pyc
 purbeurre/__pycache__/urls.cpython-39.pyc
+/samples/
