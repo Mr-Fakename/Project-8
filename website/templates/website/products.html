@@ -1,0 +1,26 @@
+{% extends 'website/base.html'%}
+{% load static %}
+{% block content %}
+
+    <br><br>
+    <div class="row">
+      {% for product in products %}
+        <div class="col-md-4 col-sm-6 col-lg-3">
+          <div class="card">
+            <img class="card-img-top" src="{{ product.picture }}" alt="Card image cap">
+            <div class="card-body text-center">
+              <p class="card-title">{{ product.name }}</p>
+              <hr>
+              <a href="/product/{{product.id}}"
+              ><input
+                type="submit"
+                value="Learn More"
+                class="btn btn-danger btn-sm"
+            /></a>
+            </div>
+          </div>
+          <br><br><br>
+        </div>
+      {% endfor %}
+    </div>
+{% endblock %}
